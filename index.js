@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const app = express();
 
-// Allow all origins for now (easy mode)
+// Allow all origins for now
 app.use(cors());
 
 const PORT = process.env.PORT || 3000;

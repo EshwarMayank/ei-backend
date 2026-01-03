@@ -5,7 +5,7 @@ const app = express();
 
 // Allow all origins for now
 app.use(cors());
-app.use(express.json()); // needed to read JSON body
+app.use(express.json()); // parse JSON bodies
 
 const PORT = process.env.PORT || 3000;
 

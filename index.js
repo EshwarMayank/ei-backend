@@ -25,3 +25,19 @@ app.get("/therapists", (req, res) => {
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
+app.post("/contact", (req, res) => {
+  const { name, email, message } = req.body;
+  console.log("New contact request:", { name, email, message });
+  if (!name || !email || !message) {
+    return res.status(400).json({ success: false, error: "All fields required" });
+  }
+  res.json({ success: true });
+});
+
+app.get("/faq", (req, res) => {
+  res.json([
+    { id: 1, q: "Is this confidential?", a: "Yes, all conversations are private." },
+    { id: 2, q: "Do I need a camera?", a: "You can join by audio-only if you prefer." },
+  ]);
+});
+
